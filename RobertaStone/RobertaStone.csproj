@@ -168,18 +168,142 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContentTypeController.cs" />
+    <Compile Include="Controllers\ConversationPartnerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\LexisController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206101134012_InitialModel.cs" />
+    <Compile Include="Migrations\202206101134012_InitialModel.Designer.cs">
+      <DependentUpon>202206101134012_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101207158_AddTestBool.cs" />
+    <Compile Include="Migrations\202206101207158_AddTestBool.Designer.cs">
+      <DependentUpon>202206101207158_AddTestBool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101208226_RemovedTestBool.cs" />
+    <Compile Include="Migrations\202206101208226_RemovedTestBool.Designer.cs">
+      <DependentUpon>202206101208226_RemovedTestBool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101214000_InitialModel1.cs" />
+    <Compile Include="Migrations\202206101214000_InitialModel1.Designer.cs">
+      <DependentUpon>202206101214000_InitialModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101218137_InitialModel2.cs" />
+    <Compile Include="Migrations\202206101218137_InitialModel2.Designer.cs">
+      <DependentUpon>202206101218137_InitialModel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101223452_populateLanguageTable.cs" />
+    <Compile Include="Migrations\202206101223452_populateLanguageTable.Designer.cs">
+      <DependentUpon>202206101223452_populateLanguageTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101238267_ApplyAnnotationsToLexisContent.cs" />
+    <Compile Include="Migrations\202206101238267_ApplyAnnotationsToLexisContent.Designer.cs">
+      <DependentUpon>202206101238267_ApplyAnnotationsToLexisContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101510056_MadePartnerIdNullable.cs" />
+    <Compile Include="Migrations\202206101510056_MadePartnerIdNullable.Designer.cs">
+      <DependentUpon>202206101510056_MadePartnerIdNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101514205_MadeTimeLearntPropIntoTimeSpan.cs" />
+    <Compile Include="Migrations\202206101514205_MadeTimeLearntPropIntoTimeSpan.Designer.cs">
+      <DependentUpon>202206101514205_MadeTimeLearntPropIntoTimeSpan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206101521414_MadeTimeLearntOptional.cs" />
+    <Compile Include="Migrations\202206101521414_MadeTimeLearntOptional.Designer.cs">
+      <DependentUpon>202206101521414_MadeTimeLearntOptional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131135326_AddedLanguagePropToLexisClass.cs" />
+    <Compile Include="Migrations\202206131135326_AddedLanguagePropToLexisClass.Designer.cs">
+      <DependentUpon>202206131135326_AddedLanguagePropToLexisClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131202017_UpdateLanguageNameRecordToVietnamese.cs" />
+    <Compile Include="Migrations\202206131202017_UpdateLanguageNameRecordToVietnamese.Designer.cs">
+      <DependentUpon>202206131202017_UpdateLanguageNameRecordToVietnamese.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131203478_AddItalianAsNewLanguage.cs" />
+    <Compile Include="Migrations\202206131203478_AddItalianAsNewLanguage.Designer.cs">
+      <DependentUpon>202206131203478_AddItalianAsNewLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131206475_UpdateExistingLexisRecordToHaveCorrectLanguageId.cs" />
+    <Compile Include="Migrations\202206131206475_UpdateExistingLexisRecordToHaveCorrectLanguageId.Designer.cs">
+      <DependentUpon>202206131206475_UpdateExistingLexisRecordToHaveCorrectLanguageId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131603529_addContentTypeClass.cs" />
+    <Compile Include="Migrations\202206131603529_addContentTypeClass.Designer.cs">
+      <DependentUpon>202206131603529_addContentTypeClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131613086_addContentTypeClass1.cs" />
+    <Compile Include="Migrations\202206131613086_addContentTypeClass1.Designer.cs">
+      <DependentUpon>202206131613086_addContentTypeClass1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131620253_addContentTypeClass2.cs" />
+    <Compile Include="Migrations\202206131620253_addContentTypeClass2.Designer.cs">
+      <DependentUpon>202206131620253_addContentTypeClass2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131621401_contentTypeAdd.cs" />
+    <Compile Include="Migrations\202206131621401_contentTypeAdd.Designer.cs">
+      <DependentUpon>202206131621401_contentTypeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131623019_contentTypeAdd#2.cs" />
+    <Compile Include="Migrations\202206131623019_contentTypeAdd#2.Designer.cs">
+      <DependentUpon>202206131623019_contentTypeAdd#2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131626588_dropLexis.cs" />
+    <Compile Include="Migrations\202206131626588_dropLexis.Designer.cs">
+      <DependentUpon>202206131626588_dropLexis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131630032_RecreateLexis.cs" />
+    <Compile Include="Migrations\202206131630032_RecreateLexis.Designer.cs">
+      <DependentUpon>202206131630032_RecreateLexis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131634431_DropLexisPt2.cs" />
+    <Compile Include="Migrations\202206131634431_DropLexisPt2.Designer.cs">
+      <DependentUpon>202206131634431_DropLexisPt2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131639254_RecreateLexisPt3.cs" />
+    <Compile Include="Migrations\202206131639254_RecreateLexisPt3.Designer.cs">
+      <DependentUpon>202206131639254_RecreateLexisPt3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206131641122_AddDummyDataToContentTypesTable.cs" />
+    <Compile Include="Migrations\202206131641122_AddDummyDataToContentTypesTable.Designer.cs">
+      <DependentUpon>202206131641122_AddDummyDataToContentTypesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206181619192_RemovedLexisTypeIdAsPropInLexisClass.cs" />
+    <Compile Include="Migrations\202206181619192_RemovedLexisTypeIdAsPropInLexisClass.Designer.cs">
+      <DependentUpon>202206181619192_RemovedLexisTypeIdAsPropInLexisClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206191633187_ChangeLexisIdPropNameToId.cs" />
+    <Compile Include="Migrations\202206191633187_ChangeLexisIdPropNameToId.Designer.cs">
+      <DependentUpon>202206191633187_ChangeLexisIdPropNameToId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206191637428_droppedLexisTable.cs" />
+    <Compile Include="Migrations\202206191637428_droppedLexisTable.Designer.cs">
+      <DependentUpon>202206191637428_droppedLexisTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206191638590_ReAddedLexisTable.cs" />
+    <Compile Include="Migrations\202206191638590_ReAddedLexisTable.Designer.cs">
+      <DependentUpon>202206191638590_ReAddedLexisTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ContentType.cs" />
+    <Compile Include="Models\ConversationPartner.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\Lexis.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ConversationPartnerViewModel.cs" />
+    <Compile Include="ViewModels\LexisFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -188,9 +312,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -235,22 +367,107 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\ConversationPartner\Details.cshtml" />
+    <Content Include="Views\ConversationPartner\Index.cshtml" />
+    <Content Include="Views\Language\AvailableLanguage.cshtml" />
+    <Content Include="Views\Lexis\ShowLexis.cshtml" />
+    <Content Include="Views\Lexis\LexisForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ContentType\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202206101134012_InitialModel.resx">
+      <DependentUpon>202206101134012_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101207158_AddTestBool.resx">
+      <DependentUpon>202206101207158_AddTestBool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101208226_RemovedTestBool.resx">
+      <DependentUpon>202206101208226_RemovedTestBool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101214000_InitialModel1.resx">
+      <DependentUpon>202206101214000_InitialModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101218137_InitialModel2.resx">
+      <DependentUpon>202206101218137_InitialModel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101223452_populateLanguageTable.resx">
+      <DependentUpon>202206101223452_populateLanguageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101238267_ApplyAnnotationsToLexisContent.resx">
+      <DependentUpon>202206101238267_ApplyAnnotationsToLexisContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101510056_MadePartnerIdNullable.resx">
+      <DependentUpon>202206101510056_MadePartnerIdNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101514205_MadeTimeLearntPropIntoTimeSpan.resx">
+      <DependentUpon>202206101514205_MadeTimeLearntPropIntoTimeSpan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206101521414_MadeTimeLearntOptional.resx">
+      <DependentUpon>202206101521414_MadeTimeLearntOptional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131135326_AddedLanguagePropToLexisClass.resx">
+      <DependentUpon>202206131135326_AddedLanguagePropToLexisClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131202017_UpdateLanguageNameRecordToVietnamese.resx">
+      <DependentUpon>202206131202017_UpdateLanguageNameRecordToVietnamese.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131203478_AddItalianAsNewLanguage.resx">
+      <DependentUpon>202206131203478_AddItalianAsNewLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131206475_UpdateExistingLexisRecordToHaveCorrectLanguageId.resx">
+      <DependentUpon>202206131206475_UpdateExistingLexisRecordToHaveCorrectLanguageId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131603529_addContentTypeClass.resx">
+      <DependentUpon>202206131603529_addContentTypeClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131613086_addContentTypeClass1.resx">
+      <DependentUpon>202206131613086_addContentTypeClass1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131620253_addContentTypeClass2.resx">
+      <DependentUpon>202206131620253_addContentTypeClass2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131621401_contentTypeAdd.resx">
+      <DependentUpon>202206131621401_contentTypeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131623019_contentTypeAdd#2.resx">
+      <DependentUpon>202206131623019_contentTypeAdd#2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131626588_dropLexis.resx">
+      <DependentUpon>202206131626588_dropLexis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131630032_RecreateLexis.resx">
+      <DependentUpon>202206131630032_RecreateLexis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131634431_DropLexisPt2.resx">
+      <DependentUpon>202206131634431_DropLexisPt2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131639254_RecreateLexisPt3.resx">
+      <DependentUpon>202206131639254_RecreateLexisPt3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206131641122_AddDummyDataToContentTypesTable.resx">
+      <DependentUpon>202206131641122_AddDummyDataToContentTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206181619192_RemovedLexisTypeIdAsPropInLexisClass.resx">
+      <DependentUpon>202206181619192_RemovedLexisTypeIdAsPropInLexisClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206191633187_ChangeLexisIdPropNameToId.resx">
+      <DependentUpon>202206191633187_ChangeLexisIdPropNameToId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206191637428_droppedLexisTable.resx">
+      <DependentUpon>202206191637428_droppedLexisTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206191638590_ReAddedLexisTable.resx">
+      <DependentUpon>202206191638590_ReAddedLexisTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

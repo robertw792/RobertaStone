@@ -1,0 +1,24 @@
+﻿@model IQueryable<RobertaStone.Models.Language>
+@{
+    ViewBag.Title = "AvailableLanguage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Available Languages</h2>
+
+@if (!Model.Any())
+{
+    <p>No Languages exist.</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>Language</tr>
+        </thead>
+        @foreach (var availableLanguage in Model)
+        {
+            <tr>@availableLanguage.LanguageName</tr>
+        }
+    </table>
+}

@@ -1,0 +1,21 @@
+﻿@using Microsoft.Ajax.Utilities
+@model IQueryable<RobertaStone.Models.Lexis>
+@{
+    ViewBag.Title = "ShowLexis";
+}
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Content</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var lexis in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(lexis.LexisContent, "Edit", "Lexis", new { id = lexis.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@model RobertaStone.ViewModels.LexisFormViewModel
+@{
+    ViewBag.Title = "Create New Entry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Lexis</h2>
+
+@using (Html.BeginForm("CreateLexis", "Lexis"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Lexis.LexisContent)
+        @Html.TextBoxFor(m =>m.Lexis.LexisContent, new{ @class ="form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Lexis.LanguageId)
+        @Html.DropDownListFor(m =>m.Lexis.LanguageId,
+                              new SelectList(Model.Languages,
+                                  "LanguageId",
+                                  "LanguageName"),
+                                    "Select Language Type", 
+                   new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Lexis.ConversationPartnerId)
+        @Html.DropDownListFor(m =>m.Lexis.ConversationPartnerId, 
+                               new SelectList(Model.ConversationPartners,
+                                   "ConversationPartnerId",
+                                   "PartnerFirstName"),
+                                    "Select Language Type", 
+                    new { @class = "form-control" })
+            
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Lexis.DateLearnt)
+        @Html.TextBoxFor(m => m.Lexis.DateLearnt, new{ @class ="form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Lexis.TimeLearnt)
+        @Html.TextBoxFor(m => m.Lexis.TimeLearnt, new{ @class ="form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Lexis.ContentTypeId)
+        @Html.DropDownListFor(m =>m.Lexis.ContentTypeId, 
+                                new SelectList(Model.ContentTypes,
+                                    "ContentTypeId",
+                                    "ContentTypeName"),
+                                     "Select Content Type",
+                     new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save Lexis</button>
+}

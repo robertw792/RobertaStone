@@ -1,0 +1,31 @@
+﻿@model IEnumerable<RobertaStone.Models.ConversationPartner>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Conversation Partners</h2>
+
+@if (!Model.Any())
+{
+    <p>No conversation partners exist.</p>
+}
+else
+{
+    <table>
+        <theader>
+            <tr>FirstName</tr>
+        </theader>
+        <tbody>
+            <tr>
+                @foreach (var conversationPartner in Model)
+                {
+                    <ul>
+                        @Html.ActionLink(conversationPartner.PartnerFirstName, "Details", "ConversationPartner",
+                           new { id = conversationPartner.ConversationPartnerId }, null);
+                    </ul>
+                }
+            </tr>
+        </tbody>
+    </table>
+}
