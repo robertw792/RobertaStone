@@ -48,11 +48,20 @@ namespace RobertaStone.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateLexis(Lexis lexis)
+        public ActionResult SaveLexis(Lexis lexis)
         {
-            _context.Lexis.Add(lexis);
-            _context.SaveChanges();
+            if (lexis.id == 0)
+                _context.Lexis.Add(lexis);
+            else
+            {
+                var lexisInDb = _context.Lexis.Single(l => l.id == lexis.id);
 
+                lexisInDb.LexisContent = lexis.LexisContent;
+                lexisInDb.DateLearnt = lexis.DateLearnt;
+                lexisInDb.TimeLearnt = lexis.TimeLearnt;
+            }
+
+            _context.SaveChanges();
             return RedirectToAction("ShowLexis", "Lexis");
 
         }
