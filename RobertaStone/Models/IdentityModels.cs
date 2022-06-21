@@ -24,7 +24,7 @@ namespace RobertaStone.Models
         public DbSet<Language> Languages { get; set; }
         public DbSet<ConversationPartner> ConversationPartners { get; set; }
         public DbSet<ContentType> ContentTypes { get; set; }
-
+        public DbSet<LexisType> LexisTypes { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
