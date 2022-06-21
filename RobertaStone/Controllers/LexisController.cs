@@ -42,7 +42,8 @@ namespace RobertaStone.Controllers
             var lexis = _context.Lexis
                 .Include(l  => l.Language)
                 .Include(cp =>cp.ConversationPartner)
-                .Include(ct => ct.ContentType);
+                .Include(ct => ct.ContentType)
+                .Include(lt =>lt.LexisType);
 
             return View(lexis);
         }
@@ -78,7 +79,8 @@ namespace RobertaStone.Controllers
                 Lexis = lexis,
                 Languages = _context.Languages.ToList(),
                 ConversationPartners = _context.ConversationPartners.ToList(),
-                ContentTypes = _context.ContentTypes.ToList()
+                ContentTypes = _context.ContentTypes.ToList(),
+                LexisTypes = _context.LexisTypes.ToList()
             };
 
             return View("LexisForm", viewModel);

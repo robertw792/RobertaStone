@@ -297,6 +297,22 @@
     <Compile Include="Migrations\202206211413494_AddReferenceDataToConversationPartnersTbl.Designer.cs">
       <DependentUpon>202206211413494_AddReferenceDataToConversationPartnersTbl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206211503582_AddLexisTypeClass.cs" />
+    <Compile Include="Migrations\202206211503582_AddLexisTypeClass.Designer.cs">
+      <DependentUpon>202206211503582_AddLexisTypeClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206211504385_AddReferenceDataToLexisTypeTbl.cs" />
+    <Compile Include="Migrations\202206211504385_AddReferenceDataToLexisTypeTbl.Designer.cs">
+      <DependentUpon>202206211504385_AddReferenceDataToLexisTypeTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206211519292_AddLexisTypeIdAndLexisTypeClassAsPropsToLexis.cs" />
+    <Compile Include="Migrations\202206211519292_AddLexisTypeIdAndLexisTypeClassAsPropsToLexis.Designer.cs">
+      <DependentUpon>202206211519292_AddLexisTypeIdAndLexisTypeClassAsPropsToLexis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206211534234_AddLexisTypeClassToLexis.cs" />
+    <Compile Include="Migrations\202206211534234_AddLexisTypeClassToLexis.Designer.cs">
+      <DependentUpon>202206211534234_AddLexisTypeClassToLexis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContentType.cs" />
@@ -304,6 +320,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\Lexis.cs" />
+    <Compile Include="Models\LexisType.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -481,6 +498,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206211413494_AddReferenceDataToConversationPartnersTbl.resx">
       <DependentUpon>202206211413494_AddReferenceDataToConversationPartnersTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206211503582_AddLexisTypeClass.resx">
+      <DependentUpon>202206211503582_AddLexisTypeClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206211504385_AddReferenceDataToLexisTypeTbl.resx">
+      <DependentUpon>202206211504385_AddReferenceDataToLexisTypeTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206211519292_AddLexisTypeIdAndLexisTypeClassAsPropsToLexis.resx">
+      <DependentUpon>202206211519292_AddLexisTypeIdAndLexisTypeClassAsPropsToLexis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206211534234_AddLexisTypeClassToLexis.resx">
+      <DependentUpon>202206211534234_AddLexisTypeClassToLexis.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
