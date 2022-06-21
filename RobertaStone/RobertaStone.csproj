@@ -289,6 +289,14 @@
     <Compile Include="Migrations\202206191638590_ReAddedLexisTable.Designer.cs">
       <DependentUpon>202206191638590_ReAddedLexisTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206211407582_AddNewReferenceDataInContentTypeTbl.cs" />
+    <Compile Include="Migrations\202206211407582_AddNewReferenceDataInContentTypeTbl.Designer.cs">
+      <DependentUpon>202206211407582_AddNewReferenceDataInContentTypeTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206211413494_AddReferenceDataToConversationPartnersTbl.cs" />
+    <Compile Include="Migrations\202206211413494_AddReferenceDataToConversationPartnersTbl.Designer.cs">
+      <DependentUpon>202206211413494_AddReferenceDataToConversationPartnersTbl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContentType.cs" />
@@ -467,6 +475,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206191638590_ReAddedLexisTable.resx">
       <DependentUpon>202206191638590_ReAddedLexisTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206211407582_AddNewReferenceDataInContentTypeTbl.resx">
+      <DependentUpon>202206211407582_AddNewReferenceDataInContentTypeTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206211413494_AddReferenceDataToConversationPartnersTbl.resx">
+      <DependentUpon>202206211413494_AddReferenceDataToConversationPartnersTbl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
