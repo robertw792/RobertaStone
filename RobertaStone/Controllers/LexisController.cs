@@ -25,11 +25,14 @@ namespace RobertaStone.Controllers
             var contentTypes = _context.ContentTypes.ToList();
             var languages = _context.Languages.ToList();
             var conversationPartners = _context.ConversationPartners.ToList();
+            var lexisTypes = _context.LexisTypes.ToList();
+
             var viewModel = new LexisFormViewModel()
             {
                 ContentTypes         = contentTypes,
                 Languages            = languages,
-                ConversationPartners = conversationPartners
+                ConversationPartners = conversationPartners,
+                LexisTypes           = lexisTypes, 
             };
 
             return View("LexisForm", viewModel);
