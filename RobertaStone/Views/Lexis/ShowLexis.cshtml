@@ -1,8 +1,14 @@
 ﻿@using Microsoft.Ajax.Utilities
+@using RobertaStone.Models
 @model IQueryable<RobertaStone.Models.Lexis>
 @{
     ViewBag.Title = "ShowLexis";
 }
+
+<div>
+    @Html.ActionLink("Add Lexis","New","Lexis", new { @class = "btn btn-default" })
+</div>
+
 <table class="table table-bordered table-hover">
     <thead>
     <tr>
@@ -15,6 +21,7 @@
         <tr>
             <td>
                 @Html.ActionLink(lexis.LexisContent, "Edit", lexis, new { id = lexis.id })
+            </td>
         </tr>
         }
     </tbody>

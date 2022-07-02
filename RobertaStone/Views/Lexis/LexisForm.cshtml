@@ -8,23 +8,25 @@
 
 @using (Html.BeginForm("SaveLexis", "Lexis"))
 {
+    @Html.ValidationSummary(true,"Please fix the following errors.", new{@class= "field-validation-error" })
     <div class="form-group">
-        @Html.LabelFor(m =>m.Lexis.LexisContent)
-        @Html.TextBoxFor(m =>m.Lexis.LexisContent, new{ @class ="form-control" })
+        @Html.LabelFor(m =>m.LexisContent)
+        @Html.TextAreaFor(m =>m.LexisContent, new{ @class = "form-control" })
+        @Html.ValidationMessageFor(m =>m.LexisContent)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m =>m.Lexis.LanguageId)
-        @Html.DropDownListFor(m =>m.Lexis.LanguageId,
+        @Html.LabelFor(m => m.LanguageId)
+        @Html.DropDownListFor(m =>m.LanguageId,
                               new SelectList(Model.Languages,
                                   "LanguageId",
                                   "LanguageName"),
-                                    "Select Language Type", 
+                                    "Select Language Type",
                    new { @class = "form-control" })
-
+        @Html.ValidationMessageFor(m => m.LanguageId)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m =>m.Lexis.ConversationPartnerId)
-        @Html.DropDownListFor(m =>m.Lexis.ConversationPartnerId, 
+        @Html.LabelFor(m =>m.ConversationPartnerId)
+        @Html.DropDownListFor(m =>m.ConversationPartnerId, 
                                new SelectList(Model.ConversationPartners,
                                    "ConversationPartnerId",
                                    "PartnerFirstName"),
@@ -33,31 +35,41 @@
             
     </div>
     <div class="form-group">
-        @Html.LabelFor(m =>m.Lexis.DateLearnt)
-        @Html.TextBoxFor(m => m.Lexis.DateLearnt,"{0:d MMM yyyy}", new{ @class ="form-control" })
+        @Html.LabelFor(m =>m.DateLearnt)
+        @Html.TextBoxFor(m => m.DateLearnt,"{0:d MMM yyyy}", new{ @class ="form-control" })
+        @Html.ValidationMessageFor(m =>m.DateLearnt)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m =>m.Lexis.TimeLearnt)
-        @Html.TextBoxFor(m => m.Lexis.TimeLearnt, new{ @class ="form-control" })
+        @Html.LabelFor(m =>m.TimeLearnt)
+        @Html.TextBoxFor(m => m.TimeLearnt, new{ @class ="form-control" })
+        @Html.ValidationMessageFor(m =>m.TimeLearnt)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m =>m.Lexis.ContentTypeId)
-        @Html.DropDownListFor(m =>m.Lexis.ContentTypeId, 
+        @Html.LabelFor(m =>m.ContentTypeId)
+        @Html.DropDownListFor(m =>m.ContentTypeId, 
             new SelectList(Model.ContentTypes,
                 "ContentTypeId",
                 "ContentTypeName"),
             "Select Content Type",
             new { @class = "form-control" })
+        @Html.ValidationMessageFor(m =>m.ContentTypeId)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m =>m.Lexis.LexisTypeId)
-        @Html.DropDownListFor(m =>m.Lexis.LexisTypeId, 
+        @Html.LabelFor(m =>m.LexisTypeId)
+        @Html.DropDownListFor(m =>m.LexisTypeId, 
             new SelectList(Model.LexisTypes,
                            "LexisTypeId",
                            "LexisTypeName"),
                        "Select Lexis Type",
                        new { @class = "form-control" })
+        @Html.ValidationMessageFor(m =>m.LexisTypeId)
     </div>
-    @Html.HiddenFor(l => l.Lexis.id)
+    @Html.HiddenFor(m => m.id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save Lexis</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }

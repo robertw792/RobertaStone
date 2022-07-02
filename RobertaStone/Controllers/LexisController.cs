@@ -25,11 +25,14 @@ namespace RobertaStone.Controllers
             var contentTypes = _context.ContentTypes.ToList();
             var languages = _context.Languages.ToList();
             var conversationPartners = _context.ConversationPartners.ToList();
+            var lexisTypes = _context.LexisTypes.ToList();
+
             var viewModel = new LexisFormViewModel()
             {
                 ContentTypes         = contentTypes,
                 Languages            = languages,
-                ConversationPartners = conversationPartners
+                ConversationPartners = conversationPartners,
+                LexisTypes           = lexisTypes, 
             };
 
             return View("LexisForm", viewModel);
@@ -49,8 +52,21 @@ namespace RobertaStone.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SaveLexis(Lexis lexis)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new LexisFormViewModel(lexis)
+                {
+                    Languages = _context.Languages.ToList(),
+                    ContentTypes = _context.ContentTypes.ToList(),
+                    ConversationPartners = _context.ConversationPartners.ToList(),
+                    LexisTypes = _context.LexisTypes.ToList()
+                };
+
+                return View("LexisForm", viewModel);
+            }
             if (lexis.id == 0)
                 _context.Lexis.Add(lexis);
             else
@@ -60,6 +76,9 @@ namespace RobertaStone.Controllers
                 lexisInDb.LexisContent = lexis.LexisContent;
                 lexisInDb.DateLearnt = lexis.DateLearnt;
                 lexisInDb.TimeLearnt = lexis.TimeLearnt;
+                lexisInDb.LexisTypeId = lexis.LexisTypeId;
+                lexisInDb.ContentTypeId = lexis.ContentTypeId;
+                lexisInDb.ConversationPartnerId = lexis.ConversationPartnerId;
             }
 
             _context.SaveChanges();
@@ -74,9 +93,8 @@ namespace RobertaStone.Controllers
             if (lexis == null)
                 return HttpNotFound();
 
-            var viewModel = new LexisFormViewModel
+            var viewModel = new LexisFormViewModel(lexis)
             {
-                Lexis = lexis,
                 Languages = _context.Languages.ToList(),
                 ConversationPartners = _context.ConversationPartners.ToList(),
                 ContentTypes = _context.ContentTypes.ToList(),

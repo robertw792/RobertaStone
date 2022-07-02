@@ -20,12 +20,13 @@ namespace RobertaStone.Models
         public int LexisTypeId                         { get; set; }
 
         [Required]
-        [StringLength(255)]
+        [StringLength(60, MinimumLength = 3)]
         [Display(Name = "Content")]
-        public string   LexisContent                   { get; set; }
+        public string    LexisContent                  { get; set; }
 
         [Display(Name = "Date Learnt")]
-        public DateTime DateLearnt                     { get; set; }
+        [DateLearntNotInFuture]
+        public DateTime  DateLearnt                    { get; set; }
 
         [Display(Name = "Time Learnt")]
         public TimeSpan? TimeLearnt                    { get; set; }

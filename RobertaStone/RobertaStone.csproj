@@ -313,10 +313,15 @@
     <Compile Include="Migrations\202206211534234_AddLexisTypeClassToLexis.Designer.cs">
       <DependentUpon>202206211534234_AddLexisTypeClassToLexis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206281252513_AddedMinLengthToLexisContentProp.cs" />
+    <Compile Include="Migrations\202206281252513_AddedMinLengthToLexisContentProp.Designer.cs">
+      <DependentUpon>202206281252513_AddedMinLengthToLexisContentProp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContentType.cs" />
     <Compile Include="Models\ConversationPartner.cs" />
+    <Compile Include="Models\DateLearntNotInFuture.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\Lexis.cs" />
@@ -510,6 +515,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206211534234_AddLexisTypeClassToLexis.resx">
       <DependentUpon>202206211534234_AddLexisTypeClassToLexis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206281252513_AddedMinLengthToLexisContentProp.resx">
+      <DependentUpon>202206281252513_AddedMinLengthToLexisContentProp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
