@@ -2,6 +2,8 @@
 using System.Linq;
 using RobertaStone.Models;
 using System.Web.Mvc;
+using AutoMapper;
+using RobertaStone.Dtos;
 using RobertaStone.ViewModels;
 
 namespace RobertaStone.Controllers
@@ -53,11 +55,11 @@ namespace RobertaStone.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SaveLexis(Lexis lexis)
+        public ActionResult SaveLexis(LexisDto lexisDto)
         {
             if (!ModelState.IsValid)
             {
-                var viewModel = new LexisFormViewModel(lexis)
+                var viewModel = new LexisFormViewModel(lexisDto)
                 {
                     Languages = _context.Languages.ToList(),
                     ContentTypes = _context.ContentTypes.ToList(),
@@ -67,18 +69,15 @@ namespace RobertaStone.Controllers
 
                 return View("LexisForm", viewModel);
             }
-            if (lexis.id == 0)
-                _context.Lexis.Add(lexis);
+
+            if (lexisDto.id == 0)
+
+                _context.Lexis.Add(Mapper.Map<LexisDto, Lexis>(lexisDto));
             else
             {
-                var lexisInDb = _context.Lexis.Single(l => l.id == lexis.id);
+                var lexisInDb = _context.Lexis.Single(l => l.id == lexisDto.id);
 
-                lexisInDb.LexisContent = lexis.LexisContent;
-                lexisInDb.DateLearnt = lexis.DateLearnt;
-                lexisInDb.TimeLearnt = lexis.TimeLearnt;
-                lexisInDb.LexisTypeId = lexis.LexisTypeId;
-                lexisInDb.ContentTypeId = lexis.ContentTypeId;
-                lexisInDb.ConversationPartnerId = lexis.ConversationPartnerId;
+                Mapper.Map(lexisDto, lexisInDb);
             }
 
             _context.SaveChanges();
@@ -88,12 +87,13 @@ namespace RobertaStone.Controllers
 
         public ActionResult Edit(int id)
         {
+
             var lexis = _context.Lexis.SingleOrDefault(l => l.id == id);
 
             if (lexis == null)
                 return HttpNotFound();
 
-            var viewModel = new LexisFormViewModel(lexis)
+            var viewModel = new LexisFormViewModel(Mapper.Map<Lexis, LexisDto>(lexis))
             {
                 Languages = _context.Languages.ToList(),
                 ConversationPartners = _context.ConversationPartners.ToList(),
@@ -102,6 +102,7 @@ namespace RobertaStone.Controllers
             };
 
             return View("LexisForm", viewModel);
+
         }
     }
 }
