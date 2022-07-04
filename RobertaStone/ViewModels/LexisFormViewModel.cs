@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using RobertaStone.Dtos;
 using RobertaStone.Models;
 
 namespace RobertaStone.ViewModels
@@ -42,16 +43,16 @@ namespace RobertaStone.ViewModels
             id = 0;
         }
 
-        public LexisFormViewModel(Lexis lexis)
+        public LexisFormViewModel(LexisDto lexisDto)
         {
-            id                    = lexis.id;
-            LexisContent          = lexis.LexisContent;
-            DateLearnt            = lexis.DateLearnt;
-            TimeLearnt            = lexis.TimeLearnt;
-            LanguageId            = lexis.LanguageId;
-            LexisTypeId           = lexis.LexisTypeId;
-            ContentTypeId         = lexis.ContentTypeId;
-            ConversationPartnerId = lexis.ConversationPartnerId;
+            id                    = lexisDto.id;
+            LexisContent          = lexisDto.LexisContent;
+            DateLearnt            = lexisDto.DateLearnt;
+            TimeLearnt            = lexisDto.TimeLearnt;
+            LanguageId            = lexisDto.LanguageId;
+            LexisTypeId           = lexisDto.LexisTypeId;
+            ContentTypeId         = lexisDto.ContentTypeId;
+            ConversationPartnerId = lexisDto.ConversationPartnerId;
         }
     }
 }
